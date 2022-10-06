@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>Plastic-Free-City</title>
+        <script src="https://kit.fontawesome.com/54b483c574.js" crossorigin="anonymous"></script>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <link href="vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+        <link href="vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+        <link href="https://fonts.googleapis.com/css?family=Poppins:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
+        <link href="vendor/select2/select2.min.css" rel="stylesheet" media="all">
+        <link href="vendor/datepicker/daterangepicker.css" rel="stylesheet" media="all">
+        <link href= "https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="/css/app.css">
+</head>
+<body>
+    <nav class="container mx-auto flex items-center justify-between py-4">
+        <div class="flex">
+            <img src="/images/smc-logo.png" alt="logo" class="h-20 w-20">
+            <p class="px-2 py-6 font-bold text-xl">Surat Municipal Corporation</p>
+        </div>
+        <div>
+          <ul class="flex item-center">
+            <li class="ml-6 text-xl"><a href="#">Home</a></li>
+            <li class="ml-6 text-xl"><a href="#">Our mission</a></li>
+            <li class="ml-6 text-xl"><a href="#">Contact</a></li>
+            <% if(user) { %>
+              <li class="ml-6 text-xl">
+                <form id="logout" action="/logout" method="POST">
+                    <a onclick="document.getElementById('logout').submit()" href="#">Logout</a>
+                </form>
+              </li>
+            <% } else { %>
+              <li class="ml-6 text-xl"><a href="/login">Login</a></li>
+              <% } %>
+          </ul>
+        </div>
+    </nav>
+    
+    <%- body %>
+    <script src="/js/app.js"></script>
+</body>
+</html>

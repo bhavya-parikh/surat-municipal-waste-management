@@ -1,0 +1,63 @@
+<form action="/request-certificate" method="POST">
+<div class="bg_img">
+    <div class="page-wrapper bg p-t-130 p-b-100 font-poppins">
+        <div class="wrapper wrapper--w680">
+            <div class="card card-4">
+                <div class="card-body">
+                    <%if(messages.error){%>
+                    <span class="text-red-500 text-sm" ><%= messages.error%></span>
+                    <%}%>
+                    <h2 class="title">Complaint Form</h2>
+                    <form action="/index" method="POST">
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label required">Society Name</label>
+                                    <input class="input--style-4" type="text" name="SocietyName" value="<%=messages.SocietyName%>" placeholder="Enter Owner Name" required>
+                                </div>
+                            </div>
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label required">Society Address</label>
+                                    <input class="input--style-4" type="text" value="<%=messages.SocietyAddress%>" name="SocietyAddress" placeholder="Enter Shop Name" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Secretary Number</label>
+                                    <input class="input--style-4" type="number" name="SecretaryNo" value="<%=messages.SecretaryNo%>" placeholder="Enter Owner's contact no." >
+                                </div>
+                            </div>
+                        <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label">Worker Number</label>
+                                    <input class="input--style-4" type="number" name="WorkerNo" value="<%=messages.WorkerNo%>"placeholder="Enter Owner's contact no.">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row row-space">
+                            <div class="col-2">
+                                <div class="input-group">
+                                    <label class="label required">Worker Name</label>
+                                    <input class="input--style-4" type="text" name="WorkerName" value="<%=messages.WorkerName%>"placeholder="Enter Complaint" required>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-t-15">
+                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</form>
+    <!-- Jquery JS-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- Vendor JS-->
+    <script src="vendor/select2/select2.min.js"></script>
+    <script src="vendor/datepicker/moment.min.js"></script>
+    <script src="vendor/datepicker/daterangepicker.js"></script>
