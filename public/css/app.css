@@ -1,7 +1,11 @@
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "lato", sans-serif;
   -webkit-font-smoothing: antialiased;
-  color: #000;
+  color: #483838;
   background-color: secondary;
 }
 
@@ -9,15 +13,13 @@ nav li a {
   transition: all 0.3s ease-in-out;
 }
 nav li a:hover {
-  color: #3b7447;
+  color: #42855B;
 }
 
 .first-p {
   height: 590px;
   width: 100%;
-  background-image: url(/images/bg-3.gif);
-  background-repeat: no-repeat;
-  background-size: 100% 600px;
+  background-color: #90B77D;
 }
 
 .first-p-text {
@@ -28,6 +30,120 @@ nav li a:hover {
 
 button {
   transition: all 0.3s ease-in-out;
+  background-color: #483838;
+}
+button:hover {
+  background-color: #42855B;
+}
+
+#second-p {
+  background-color: #D2D79F;
+}
+
+.second-p-img {
+  width: 200px;
+  height: 200px;
+}
+
+.second-p-card {
+  width: 500px;
+}
+
+.second-p-con {
+  text-align: center;
+  width: 600px;
+}
+
+#third-part {
+  background-color: #90B77D;
+}
+
+.third-p-heading {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+.caro-button {
+  margin-left: 35%;
+}
+
+.cards-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.card img {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.card {
+  background-color: #D2D79F;
+  width: 500px;
+  margin: 0 0.5em;
+  box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+  border: none;
+  border-radius: 0;
+}
+
+.carousel-inner {
+  padding: 1em;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+  background-color: #483838;
+  width: 5vh;
+  height: 5vh;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (min-width: 768px) {
+  .card img {
+    height: 11em;
+  }
+}
+#footer {
+  text-align: center;
+  background: #483838;
+  height: 150px;
+}
+
+.footer-link-1 {
+  position: relative;
+  top: 30px;
+  right: 50px;
+  border: none;
+}
+.footer-link-1:hover {
+  color: #483838;
+}
+
+.footer-link-2 {
+  position: relative;
+  top: 30px;
+  border: none;
+}
+.footer-link-2:hover {
+  color: #483838;
+}
+
+.footer-link-3 {
+  position: relative;
+  top: 30px;
+  left: 50px;
+  border: none;
+}
+.footer-link-3:hover {
+  color: #483838;
+}
+
+.our_img {
+  height: 350px;
+  width: 6000px;
 }
 
 .required:after {
@@ -132,7 +248,6 @@ fieldset {
 
 button {
   outline: none;
-  background: none;
   border: none;
 }
 

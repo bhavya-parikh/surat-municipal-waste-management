@@ -1,11 +1,24 @@
 @import './variables';
 
+html {
+  scroll-behavior: smooth;
+}
+
+
 body {
     font-family: 'lato',sans-serif;
     -webkit-font-smoothing : antialiased; 
-    color: #000;
+    color: $dark;
     background-color: secondary;
+    
 }
+
+// #body-part {
+  
+//   background-image: url(/img/home.png);
+//   background-repeat: no-repeat;
+//   background-size: 100% 600px;
+// }
 
 nav li a{
     transition: all .3s ease-in-out;
@@ -17,9 +30,7 @@ nav li a{
 .first-p {
     height: 590px;
     width: 100%;
-    background-image: url(/images/bg-3.gif);
-    background-repeat: no-repeat;
-    background-size: 100% 600px;
+    background-color: $primary;
 }
 
 .first-p-text {
@@ -30,7 +41,127 @@ nav li a{
 
 button {
     transition: all .3s ease-in-out;
+    background-color: $dark;
+    
+    &:hover {
+        background-color:  $primary-hover;
+    }
 }
+
+#second-p {
+  background-color: $secondary;
+}
+
+.second-p-img {
+  width: 200px;
+  height: 200px;
+}
+
+.second-p-card {
+  width: 500px;
+}
+
+.second-p-con {
+  text-align: center;
+  width: 600px;
+}
+
+#third-part {
+  background-color: $primary;
+}
+
+.third-p-heading {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 50px;
+}
+
+
+.caro-button {
+  margin-left: 35%;
+}
+
+.cards-wrapper {
+	display: flex;
+	justify-content: center;
+  }
+  .card img {
+	max-width: 100%;
+	max-height: 100%;
+  }
+  .card {
+    background-color: $secondary;
+    width: 500px;
+	margin: 0 0.5em;
+	box-shadow: 2px 6px 8px 0 rgba(22, 22, 26, 0.18);
+	border: none;
+	border-radius: 0;
+  }
+  .carousel-inner {
+	padding: 1em;
+  }
+  .carousel-control-prev,
+  .carousel-control-next {
+	background-color: $dark;
+	width: 5vh;
+	height: 5vh;
+	border-radius: 50%;
+	top: 50%;
+	transform: translateY(-50%);
+  }
+  @media (min-width: 768px) {
+	.card img {
+	  height: 11em;
+	}
+  }
+
+  #footer {
+    text-align: center;
+    background: $dark;
+    height: 150px;
+
+}
+
+  .footer-link-1 {
+    position: relative;
+    top: 30px;
+    right: 50px;
+    border: none;
+    &:hover{
+      color: $dark;
+    }
+}
+
+.footer-link-2 {
+    
+    position: relative;
+    top: 30px;
+    border: none;
+    &:hover{
+      color: $dark;
+    }
+}
+
+.footer-link-3 {
+    position: relative;
+    top: 30px;
+    left: 50px;
+    border: none;
+    &:hover{
+      color: $dark;
+    }
+}
+
+
+// our-mission
+
+
+.our_img {
+  height: 350px;
+  width: 6000px;
+}
+
+
 
 
 
@@ -158,7 +289,7 @@ button {
   
   button {
     outline: none;
-    background: none;
+    //background: none;
     border: none;
   }
   

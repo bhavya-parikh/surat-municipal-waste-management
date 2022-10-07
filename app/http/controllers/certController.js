@@ -27,7 +27,7 @@ function certController(){
                 WorkerName,
                 WorkerNo
             })
-            console.log(societyDetail)
+            //console.log(societyDetail)
             societyDetail.save().then((societyDetail) => {
             
                 return res.redirect('/')

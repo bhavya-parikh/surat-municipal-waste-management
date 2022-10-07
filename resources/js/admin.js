@@ -24,11 +24,13 @@ export function initAdmin(){
                 <td class="border px-4 py-2 text-green-900">${ societyDetail.SocietyName } </td>
                 <td class="border px-4 py-2">${ societyDetail.SocietyAddress }</td>
                 <td class="border px-4 py-2">${ societyDetail.SecretaryNo }</td>
+                <td class="border px-4 py-2">${ societyDetail.WorkerName }</td>
+                <td class="border px-4 py-2">${ societyDetail.WorkerNo }</td>
                 <td class="border px-4 py-2">
                     <div class="inline-block relative w-64">
                         <form action="/agents/certificate-requests/CertificateStatus" method="POST">
-                            <input type="hidden" name="societyId" value="${ societyDetail.societyId }">
-                            <select name="status" onchange="this.form.submit()"
+                            <input type="hidden" name="_id" value="${ societyDetail._id }">
+                            <select name="CertificateStatus" onchange="this.form.submit()"
                                 class="block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline">
                                 <option value="Pending"
                                     ${ societyDetails.CertificateStatus === 'Pending' ? 'selected' : '' }>
@@ -51,7 +53,7 @@ export function initAdmin(){
                     </div>
                 </td>
                 <td class="border px-4 py-2">
-                    ${ moment(societyDetail.updatedAt).format('hh:mm A') }
+                    ${ moment(societyDetail.updatedAt).format('MMM Do YY') }
                 </td>
             </tr>
         `

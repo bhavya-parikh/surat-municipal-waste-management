@@ -50,8 +50,8 @@ app.use(passport.session())
 app.use(flash())
 //Assets
 app.use(express.static('public'))
-//app.use(express.json)
 app.use(express.urlencoded({extended:false}))
+//app.use(express.json)
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({
     extended: true
