@@ -8,7 +8,11 @@ function homeController(){
         },
         mission(req,res){
             res.render('our-mission')
+        },
+        contact(req,res){
+            res.render('contact')
         }
+    
     }
 }
 

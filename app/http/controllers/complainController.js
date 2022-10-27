@@ -10,7 +10,7 @@ function complainController(){
         },
         postComplain(req,res){
             const { Name,Address,Number,Complain}  = req.body
-            if(!Name || !Address || !Number || !Complain){
+            if(!Name || !Address || !Complain){
                 req.flash('error','All fields are required')
                 req.flash('Name',Name)
                 req.flash('Address',Address)

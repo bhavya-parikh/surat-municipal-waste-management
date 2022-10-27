@@ -1,11 +1,44 @@
 @import './variables';
 
+//admin-button
+hr{
+  margin-top: 30px;
+  transform: rotate(-45deg);
+  width: 200px;
+  height: 12px;
+}
+
+.ad-b-div {
+  margin-top: 100px;
+  margin-left: 400px;
+}
+
+.ad-b-div-1 {
+  margin-top: 50px;
+  margin-left: 300px;
+}
+
+.ad-b-div-1-1 {
+  margin-left: 300px;
+}
+
+.ad-b-div-1-2 {
+  margin-left: 320px;
+}
+
+.ab-bb-1 {
+  background-color: $dark;
+    
+    &:hover {
+        background-color:  $primary-hover;
+    }
+}
 html {
   scroll-behavior: smooth;
 }
 
 
-body {
+#body-part {
     font-family: 'lato',sans-serif;
     -webkit-font-smoothing : antialiased; 
     color: $dark;
@@ -77,19 +110,19 @@ button {
 }
 
 
-.caro-button {
+.caros-button {
   margin-left: 35%;
 }
 
-.cards-wrapper {
+.cardsa-wrapper {
 	display: flex;
 	justify-content: center;
   }
-  .card img {
+  .carda img {
 	max-width: 100%;
 	max-height: 100%;
   }
-  .card {
+  .carda {
     background-color: $secondary;
     width: 500px;
 	margin: 0 0.5em;
@@ -110,7 +143,7 @@ button {
 	transform: translateY(-50%);
   }
   @media (min-width: 768px) {
-	.card img {
+	.carda img {
 	  height: 11em;
 	}
   }
@@ -161,7 +194,22 @@ button {
   width: 6000px;
 }
 
+// contact
 
+
+.contact_detail {
+  text-align: center;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+  
+.contact-info{
+  background-image: url(/images/contact.png);
+  background-repeat: no-repeat;
+  background-size: 100% 400px;
+  height: 800px;
+}
 
 
 
@@ -228,22 +276,22 @@ button {
    * More sensible default box-sizing:
    * css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice
    */
-  html {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    box-sizing: border-box;
-  }
+  // html {
+  //   -webkit-box-sizing: border-box;
+  //   -moz-box-sizing: border-box;
+  //   box-sizing: border-box;
+  // }
   
-  * {
-    padding: 0;
-    margin: 0;
-  }
+  // * {
+  //   padding: 0;
+  //   margin: 0;
+  // }
   
-  *, *:before, *:after {
-    -webkit-box-sizing: inherit;
-    -moz-box-sizing: inherit;
-    box-sizing: inherit;
-  }
+  // *, *:before, *:after {
+  //   -webkit-box-sizing: inherit;
+  //   -moz-box-sizing: inherit;
+  //   box-sizing: inherit;
+  // }
   
   /* ==========================================================================
      #RESET
@@ -251,16 +299,16 @@ button {
   /**
    * A very simple reset that sits on top of Normalize.css.
    */
-  body,
-  h1, h2, h3, h4, h5, h6,
-  blockquote, p, pre,
-  dl, dd, ol, ul,
-  figure,
-  hr,
-  fieldset, legend {
-    margin: 0;
-    padding: 0;
-  }
+  // body,
+  // h1, h2, h3, h4, h5, h6,
+  // blockquote, p, pre,
+  // dl, dd, ol, ul,
+  // figure,
+  // hr,
+  // fieldset, legend {
+  //   margin: 0;
+  //   padding: 0;
+  // }
   /**
    * Remove trailing margins from nested lists.
    */
@@ -287,11 +335,11 @@ button {
     border: 0;
   }
   
-  button {
-    outline: none;
-    //background: none;
-    border: none;
-  }
+  // button {
+  //   outline: none;
+  //   // background: none;
+  //   border: none;
+  // }
   
   /* ==========================================================================
      #PAGE WRAPPER
@@ -300,39 +348,39 @@ button {
     min-height: 100vh;
   }
   
-  body {
-    font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
-    font-weight: 400;
-    font-size: 14px;
-  }
+  // body {
+  //   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
+  //   font-weight: 400;
+  //   font-size: 14px;
+  // }
   
-  h1, h2, h3, h4, h5, h6 {
-    font-weight: 400;
-  }
+  // h1, h2, h3, h4, h5, h6 {
+  //   font-weight: 400;
+  // }
   
-  h1 {
-    font-size: 36px;
-  }
+  // h1 {
+  //   font-size: 36px;
+  // }
   
-  h2 {
-    font-size: 30px;
-  }
+  // h2 {
+  //   font-size: 30px;
+  // }
   
-  h3 {
-    font-size: 24px;
-  }
+  // h3 {
+  //   font-size: 24px;
+  // }
   
-  h4 {
-    font-size: 18px;
-  }
+  // h4 {
+  //   font-size: 18px;
+  // }
   
-  h5 {
-    font-size: 15px;
-  }
+  // h5 {
+  //   font-size: 15px;
+  // }
   
-  h6 {
-    font-size: 13px;
-  }
+  // h6 {
+  //   font-size: 13px;
+  // }
   
   /* ==========================================================================
      #BACKGROUND
@@ -359,7 +407,7 @@ button {
   }
   
   .p-t-15 {
-    padding-left: 250px;
+    padding-left: 200px;
     padding-bottom: 20px;
   }
   
@@ -401,7 +449,7 @@ button {
   /* ==========================================================================
      #BUTTON
      ========================================================================== */
-  .btn {
+  .btn1 {
     display: inline-block;
     line-height: 50px;
     padding: 0 50px;

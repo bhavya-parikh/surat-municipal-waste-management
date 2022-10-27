@@ -1,4 +1,4 @@
-<form action="/complain-form" method="POST">
+<form action="/admin/update-waste-info" method="POST">
     <div class="bg_img">
         <div class="page-wrapper bg p-t-130 p-b-100 font-poppins">
             <div class="wrapper wrapper--w680">
@@ -7,38 +7,38 @@
                         <%if(messages.error){%>
                         <span class="text-red-500 text-sm" ><%= messages.error%></span>
                         <%}%>
-                        <h2 class="title">Complain Form</h2>
+                        <h2 class="title">Waste Updation Form</h2>
                         <form action="/index" method="POST">
                             <div class="row row-space">
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label required">Name</label>
-                                        <input class="input--style-4" type="text" name="Name" value="<%=messages.Name%>" placeholder="Name" required>
+                                        <label class="label required">Center Name</label>
+                                        <input class="input--style-4" type="text" name="CenterName" value="<%=messages.CenterName%>" placeholder="Enter Center Name" required>
                                     </div>
                                 </div>
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label required">Address</label>
-                                        <input class="input--style-4" type="text" value="<%=messages.Address%>" name="Address" placeholder="Enter Address" required>
+                                        <label class="label required">Waste Type</label>
+                                        <input class="input--style-4" type="text" value="<%=messages.WasteType%>" name="WasteType" placeholder="Enter Society Address" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="row row-space">
                                 <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label">Enter Number</label>
-                                        <input class="input--style-4" type="number" name="Number" value="<%=messages.Number%>" placeholder="Enter Contact no." >
+                                        <label class="label required">Waste Quantity</label>
+                                        <input class="input--style-4" type="text" name="WasteQty" value="<%=messages.WasteQuanity%>" placeholder="Enter Waste Quantity" required>
                                     </div>
                                 </div>
                             <div class="col-2">
                                     <div class="input-group">
-                                        <label class="label required">Your Complain</label>
-                                        <input class="input--style-4" type="text" name="Complain" value="<%=messages.Complain%>"placeholder="Enter Complain" required>
+                                        <label class="label">Waste Description</label>
+                                        <input class="input--style-4" type="text" name="WasteDesc" value="<%=messages.WasteDesc%>"placeholder="Enter Waste Description" required>
                                     </div>
                                 </div>
                             </div>
                             <div class="p-t-15">
-                                <button class="btn1 btn--radius-2 btn--blue" type="submit">Submit</button>
+                                <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
                             </div>
                         </form>
                     </div>
@@ -53,4 +53,8 @@
         <script src="vendor/select2/select2.min.js"></script>
         <script src="vendor/datepicker/moment.min.js"></script>
         <script src="vendor/datepicker/daterangepicker.js"></script>
+    
+
+
+
     

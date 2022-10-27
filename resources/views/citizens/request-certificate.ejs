@@ -7,7 +7,7 @@
                     <%if(messages.error){%>
                     <span class="text-red-500 text-sm" ><%= messages.error%></span>
                     <%}%>
-                    <h2 class="title">Complaint Form</h2>
+                    <h2 class="title">Request Form</h2>
                     <form action="/index" method="POST">
                         <div class="row row-space">
                             <div class="col-2">
@@ -19,34 +19,34 @@
                             <div class="col-2">
                                 <div class="input-group">
                                     <label class="label required">Society Address</label>
-                                    <input class="input--style-4" type="text" value="<%=messages.SocietyAddress%>" name="SocietyAddress" placeholder="Enter Shop Name" required>
+                                    <input class="input--style-4" type="text" value="<%=messages.SocietyAddress%>" name="SocietyAddress" placeholder="Enter Society Address" required>
                                 </div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label">Secretary Number</label>
-                                    <input class="input--style-4" type="number" name="SecretaryNo" value="<%=messages.SecretaryNo%>" placeholder="Enter Owner's contact no." >
+                                    <label class="label required">Secretary Number</label>
+                                    <input class="input--style-4" type="number" name="SecretaryNo" value="<%=messages.SecretaryNo%>" placeholder="Enter Secretary's contact no." required>
                                 </div>
                             </div>
                         <div class="col-2">
                                 <div class="input-group">
                                     <label class="label">Worker Number</label>
-                                    <input class="input--style-4" type="number" name="WorkerNo" value="<%=messages.WorkerNo%>"placeholder="Enter Owner's contact no.">
+                                    <input class="input--style-4" type="number" name="WorkerNo" value="<%=messages.WorkerNo%>"placeholder="Enter Worker's contact no.">
                                 </div>
                             </div>
                         </div>
                         <div class="row row-space">
                             <div class="col-2">
                                 <div class="input-group">
-                                    <label class="label required">Worker Name</label>
-                                    <input class="input--style-4" type="text" name="WorkerName" value="<%=messages.WorkerName%>"placeholder="Enter Complaint" required>
+                                    <label class="label">Worker Name</label>
+                                    <input class="input--style-4" type="text" name="WorkerName" value="<%=messages.WorkerName%>"placeholder="Enter Worker Name">
                                 </div>
                             </div>
                         </div>
                         <div class="p-t-15">
-                            <button class="btn btn--radius-2 btn--blue" type="submit">Submit</button>
+                            <button class="btn1 btn--radius-2 btn--blue " type="submit">Submit</button>
                         </div>
                     </form>
                 </div>

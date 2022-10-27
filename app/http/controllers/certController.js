@@ -10,7 +10,7 @@ function certController(){
                 },
         postCert(req,res){
             const { SocietyName,SocietyAddress,SecretaryNo,WorkerNo,WorkerName}  = req.body
-            if(!SocietyName || !SocietyAddress || !SecretaryNo || !WorkerNo || !WorkerName ){
+            if(!SocietyName || !SocietyAddress || !SecretaryNo){
                 req.flash('error','All fields are required')
                 req.flash('SocietyName',SocietyName)
                 req.flash('SocietyAddress',SocietyAddress)

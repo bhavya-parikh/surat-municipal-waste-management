@@ -1841,9 +1841,144 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
 /* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _admin__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./admin */ "./resources/js/admin.js");
+/* harmony import */ var _complainadmin__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./complainadmin */ "./resources/js/complainadmin.js");
+/* harmony import */ var _wasteInfoAdmin__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./wasteInfoAdmin */ "./resources/js/wasteInfoAdmin.js");
+/* harmony import */ var _wasteinfoUser__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./wasteinfoUser */ "./resources/js/wasteinfoUser.js");
+
+
+
 
 
 (0,_admin__WEBPACK_IMPORTED_MODULE_1__.initAdmin)();
+(0,_complainadmin__WEBPACK_IMPORTED_MODULE_2__.initComplainAdmin)();
+(0,_wasteInfoAdmin__WEBPACK_IMPORTED_MODULE_3__.initWasteInfoAdmin)();
+(0,_wasteinfoUser__WEBPACK_IMPORTED_MODULE_4__.initWasteInfoUser)();
+
+/***/ }),
+
+/***/ "./resources/js/complainadmin.js":
+/*!***************************************!*\
+  !*** ./resources/js/complainadmin.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initComplainAdmin": () => (/* binding */ initComplainAdmin)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function initComplainAdmin() {
+  var complainTableBody = document.querySelector('#complainTableBody');
+  var complainDetails = [];
+  var markup;
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/admin/complains', {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }).then(function (res) {
+    complainDetails = res.data;
+    markup = generateMarkup(complainDetails);
+    complainTableBody.innerHTML = markup;
+  })["catch"](function (err) {
+    console.log(err);
+  });
+
+  function generateMarkup(complainDetails) {
+    return complainDetails.map(function (complainDetail) {
+      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">".concat(complainDetail.Name, " </td>\n                <td class=\"border px-4 py-2\">").concat(complainDetail.Address, "</td>\n                <td class=\"border px-4 py-2\">").concat(complainDetail.Number, "</td>\n                <td class=\"border px-4 py-2\">").concat(complainDetail.Complain, "</td>\n                <td class=\"border px-4 py-2\">\n                    <div class=\"inline-block relative w-64\">\n                        <form action=\"/admin/complains/ComplainStatus\" method=\"POST\">\n                            <input type=\"hidden\" name=\"_id\" value=\"").concat(complainDetail._id, "\">\n                            <select name=\"ComplainStatus\" onchange=\"this.form.submit()\"\n                                class=\"block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline\">\n                                <option value=\"Pending\"\n                                    ").concat(complainDetails.ComplainStatus === 'Pending' ? 'selected' : '', ">\n                                    Pending</option>\n                                <option value=\"Resolved\" ").concat(complainDetail.ComplainStatus === 'Resolved' ? 'selected' : '', ">\n                                    Resolved\n                                </option>\n                            </select>\n                        </form>\n                        <div\n                            class=\"pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700\">\n                            <svg class=\"fill-current h-4 w-4\" xmlns=\"http://www.w3.org/2000/svg\"\n                                viewBox=\"0 0 20 20\">\n                                <path\n                                    d=\"M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z\" />\n                            </svg>\n                        </div>\n                    </div>\n                </td>\n                <td class=\"border px-4 py-2\">\n                    ").concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(complainDetail.createdAt).format('MMM Do YY'), "\n                </td>\n            </tr>\n        ");
+    }).join('');
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/wasteInfoAdmin.js":
+/*!****************************************!*\
+  !*** ./resources/js/wasteInfoAdmin.js ***!
+  \****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initWasteInfoAdmin": () => (/* binding */ initWasteInfoAdmin)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function initWasteInfoAdmin() {
+  var wasteInfoTableAdminBody = document.querySelector('#wasteInfoAdminTableBody');
+  var plasticInfos = [];
+  var markup;
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/update-waste-info-back', {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }).then(function (res) {
+    plasticInfos = res.data;
+    markup = generateMarkup(plasticInfos);
+    wasteInfoAdminTableBody.innerHTML = markup;
+  })["catch"](function (err) {
+    console.log(err);
+  });
+
+  function generateMarkup(plasticInfos) {
+    return plasticInfos.map(function (plasticInfo) {
+      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">".concat(plasticInfo.CenterName, " </td>\n                <td class=\"border px-4 py-2\">").concat(plasticInfo.WasteType, "</td>\n                <td class=\"border px-4 py-2\">").concat(plasticInfo.WasteQty, "</td>\n                <td class=\"border px-4 py-2\">").concat(plasticInfo.WasteDesc, "</td>\n                <td class=\"border px-4 py-2\">\n                    <div class=\"inline-block relative w-64\">\n                        <form action=\"/admin/update-waste-info/status\" method=\"POST\">\n                            <input type=\"hidden\" name=\"_id\" value=\"").concat(plasticInfo._id, "\">\n                            <select name=\"WasteStatus\" onchange=\"this.form.submit()\"\n                                class=\"block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline\">\n                                <option value=\"Pending\"\n                                    ").concat(plasticInfo.WasteStatus === 'Pending' ? 'selected' : '', ">\n                                    Pending</option>\n                                <option value=\"Sold\" ").concat(plasticInfo.WasteStatus === 'Sold' ? 'selected' : '', ">\n                                    Sold\n                                </option>\n                            </select>\n                        </form>\n                        <div\n                            class=\"pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700\">\n                            <svg class=\"fill-current h-4 w-4\" xmlns=\"http://www.w3.org/2000/svg\"\n                                viewBox=\"0 0 20 20\">\n                                <path\n                                    d=\"M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z\" />\n                            </svg>\n                        </div>\n                    </div>\n                </td>\n                <td class=\"border px-4 py-2\">\n                    ").concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(plasticInfo.createdAt).format('MMM Do YY'), "\n                </td>\n            </tr>\n        ");
+    }).join('');
+  }
+}
+
+/***/ }),
+
+/***/ "./resources/js/wasteinfoUser.js":
+/*!***************************************!*\
+  !*** ./resources/js/wasteinfoUser.js ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "initWasteInfoUser": () => (/* binding */ initWasteInfoUser)
+/* harmony export */ });
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! axios */ "./node_modules/axios/index.js");
+/* harmony import */ var axios__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(axios__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+/* harmony import */ var moment__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(moment__WEBPACK_IMPORTED_MODULE_1__);
+
+
+function initWasteInfoUser() {
+  var wasteInfoTableBody = document.querySelector('#wasteInfoTableBody');
+  var plasticInfos = [];
+  var markup;
+  axios__WEBPACK_IMPORTED_MODULE_0___default().get('/waste-info-user', {
+    headers: {
+      "X-Requested-With": "XMLHttpRequest"
+    }
+  }).then(function (res) {
+    plasticInfos = res.data;
+    markup = generateMarkup(plasticInfos);
+    wasteInfoTableBody.innerHTML = markup;
+  })["catch"](function (err) {
+    console.log(err);
+  });
+
+  function generateMarkup(plasticInfos) {
+    return plasticInfos.map(function (plasticInfo) {
+      return "\n                <tr>\n                <td class=\"border px-4 py-2 text-green-900\">".concat(plasticInfo.CenterName, " </td>\n                <td class=\"border px-4 py-2\">").concat(plasticInfo.WasteType, "</td>\n                <td class=\"border px-4 py-2\">").concat(plasticInfo.WasteQty, "</td>\n                <td class=\"border px-4 py-2\">").concat(plasticInfo.WasteDesc, "</td>\n                    <div class=\"inline-block relative w-64\">\n                        \n                        \n                    </div>\n                </td>\n                <td class=\"border px-4 py-2\">\n                    ").concat(moment__WEBPACK_IMPORTED_MODULE_1___default()(plasticInfo.createdAt).format('MMM Do YY'), "\n                </td>\n            </tr>\n        ");
+    }).join('');
+  }
+}
 
 /***/ }),
 

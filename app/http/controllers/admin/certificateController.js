@@ -3,7 +3,7 @@ const societyDetail = require('../../../models/societyDetails')
 function certificateController(){
     return{
         index(req,res){
-            societyDetails.find({CertificateStatus:{$ne:'Approved'}},null,{sort: {'createdAt': 1}}).populate('societyDetails._id').exec((err,societyDetails)=>{
+            societyDetails.find({},null,{sort: {'updatedAt': 1}}).populate('societyDetails._id').exec((err,societyDetails)=>{
                  if(req.xhr){
                      res.json(societyDetails)
                  }
