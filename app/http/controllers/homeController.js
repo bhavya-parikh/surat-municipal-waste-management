@@ -1,7 +1,7 @@
 function homeController(){
     return {
         index(req,res){
-            res.render('home')
+            res.render('index')
         },
         seller(req,res){
             res.render('seller-info')
