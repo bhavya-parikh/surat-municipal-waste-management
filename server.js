@@ -11,11 +11,11 @@ const session = require('express-session')
 const MongoDbStore = require('connect-mongo')(session)
 const passport = require('passport')
 const bodyParser = require('body-parser');
-
+const password = process.env.PASSWORD
 
 
 //Database connection
-const url = 'mongodb://localhost:27017/Plastic_Free_City_Project' 
+const url = 'mongodb+srv://bhavya_parikh:'+password+'@hackathon-project.kbfbht1.mongodb.net/?retryWrites=true&w=majority' 
 mongoose.connect(url, { useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify : true });
 const connection = mongoose.connection;
 connection.once('open', () => {
