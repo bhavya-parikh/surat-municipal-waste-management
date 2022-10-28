@@ -14,9 +14,8 @@ const bodyParser = require('body-parser');
 const password = process.env.PASSWORD
 
 
-//Database connection
-const url = 'mongodb+srv://bhavya_parikh:'+password+'@hackathon-project.kbfbht1.mongodb.net/?retryWrites=true&w=majority' 
-mongoose.connect(url, { useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify : true });
+//Database connection 
+mongoose.connect(process.env.MONGO_CONNECTION_URL, { useNewUrlParser: true, useCreateIndex:true, useUnifiedTopology: true, useFindAndModify : true });
 const connection = mongoose.connection;
 connection.once('open', () => {
     console.log('Database connected...');
@@ -75,7 +74,9 @@ app.set('view engine','ejs')
 
 
 require('./routes/web')(app)
-
+app.use((req,res)=>{
+    res.status(404).render('errors/404')
+})
 
 
 
